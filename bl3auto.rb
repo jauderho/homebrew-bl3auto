@@ -5,21 +5,13 @@
 class Bl3auto < Formula
   desc "Borderlands and Wonderlands Bulk Code Redemption System"
   homepage "https://github.com/jauderho/bl3auto/"
-  version "2.2.17"
+  version "2.2.18"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.17/bl3auto-2.2.17-macos-arm64.tar.gz"
-      sha256 "cb4c611c97ea685180db4299b1918b72ba2d36b3f1b8bf12d15d5f8ca9d0658b"
-
-      def install
-        bin.install "bl3auto"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.17/bl3auto-2.2.17-macos-amd64.tar.gz"
-      sha256 "ed3b2ab12159f7875c823b8a8d719dc8b4adbe2d255abd7ede2a3ef3e91539f1"
+      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.18/bl3auto-2.2.18-macos-arm64.tar.gz"
+      sha256 "a777db54a6253ae35685df88c5c125ca71b196533490fc82e245b1beb149c651"
 
       def install
         bin.install "bl3auto"
@@ -28,25 +20,17 @@ class Bl3auto < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.17/bl3auto-2.2.17-linux-armv6.tar.gz"
-      sha256 "41055bdfe0d8de5c3f3175aa879d653bd160e8985763c8961d0dcb0e52a3704c"
-
-      def install
-        bin.install "bl3auto"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.17/bl3auto-2.2.17-linux-arm64.tar.gz"
-      sha256 "c54e66007cb8f602bfad54ab05d95ca0c27126878e1784a51fa0150c1efe2ed7"
+      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.18/bl3auto-2.2.18-linux-arm64.tar.gz"
+      sha256 "3f5e09761df3642547556214bb8e0b3b17449011eb9db90d7e923e253f655b65"
 
       def install
         bin.install "bl3auto"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.17/bl3auto-2.2.17-linux-amd64.tar.gz"
-      sha256 "3d7c2699f7a61a7a395b366f838ba207bc051431cc55e4006d999ca506adcf26"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.18/bl3auto-2.2.18-linux-armv6.tar.gz"
+      sha256 "1fb857fea528c67442c7729f22ad9e6d8a7ebd9884b61c1cf238586a2b71fadd"
 
       def install
         bin.install "bl3auto"
