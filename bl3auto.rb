@@ -5,13 +5,13 @@
 class Bl3auto < Formula
   desc "Borderlands and Wonderlands Bulk Code Redemption System"
   homepage "https://github.com/jauderho/bl3auto/"
-  version "2.2.18"
+  version "2.2.20"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.18/bl3auto-2.2.18-macos-arm64.tar.gz"
-      sha256 "a777db54a6253ae35685df88c5c125ca71b196533490fc82e245b1beb149c651"
+      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.20/bl3auto-2.2.20-macos-arm64.tar.gz"
+      sha256 "5c1ba424f340e0a398bf4b1420684a327c4e698bf2d3a28232b74271657eb3f5"
 
       def install
         bin.install "bl3auto"
@@ -20,17 +20,17 @@ class Bl3auto < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.18/bl3auto-2.2.18-linux-arm64.tar.gz"
-      sha256 "3f5e09761df3642547556214bb8e0b3b17449011eb9db90d7e923e253f655b65"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.20/bl3auto-2.2.20-linux-armv6.tar.gz"
+      sha256 "509445c15f9baa3571fe40a474510936aaa2fe30194980e1e3dee4d0d52e4f68"
 
       def install
         bin.install "bl3auto"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.18/bl3auto-2.2.18-linux-armv6.tar.gz"
-      sha256 "1fb857fea528c67442c7729f22ad9e6d8a7ebd9884b61c1cf238586a2b71fadd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jauderho/bl3auto/releases/download/v2.2.20/bl3auto-2.2.20-linux-arm64.tar.gz"
+      sha256 "1f97f98bd03c819eb37d524174010795ce2feb831cdfe4ec2c4c198f78d3f756"
 
       def install
         bin.install "bl3auto"
